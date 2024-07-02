@@ -23,18 +23,18 @@ def get_employee_checkin(employee,atime):
 
 def get_employee_default_work_hour(employee,adate):
     ''' weekly working hour'''
-      
+    employee = employee
+    adate = adate  
     #validate current or active FY year WHERE --
     # AND YEAR(valid_from) = CAST(%(year)s as INT) AND YEAR(valid_to) = CAST(%(year)s as INT)
     # AND YEAR(w.valid_from) = CAST(('2022-01-01') as INT) AND YEAR(w.valid_to) = CAST(('2022-12-30') as INT);
-    employee = employee
-    adate = adate  
+    
     target_work_hours= frappe.db.sql(
         """ 
     SELECT w.name,w.employee,w.valid_from,w.valid_to,d.day,d.hours,d.break_minutes  FROM `tabWeekly Working Hours` w  
     LEFT JOIN `tabDaily Hours Detail` d ON w.name = d.parent 
-    WHERE w.employee='%s' AND d.day = DAYNAME('%s') and w.valid_from <= '%s' and w.valid_to >= '%s' and w.docstatus = 1
-    """%(employee,adate,adate,adate), as_dict=1
+    WHERE w.employee='%s' AND d.day = DAYNAME('%s')
+    """%(employee,adate), as_dict=1
     )
     if (target_work_hours is None  or target_work_hours == []):
         msg = f'<div>Please create "Weekly Working Hours" for the selected Employee: {employee} first. </div>'    
