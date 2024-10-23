@@ -9,6 +9,7 @@
  "field_order": [
   "employee",
   "attendance",
+  "stundennachweis_monteur_1",
   "acolumn_break_1",
   "log_date",
   "status",
@@ -71,14 +72,12 @@
   {
    "fieldname": "number_of_breaks",
    "fieldtype": "Int",
-   "hidden": 0,
    "label": "Number of Breaks",
    "read_only": 1
   },
   {
    "fieldname": "break_hours",
    "fieldtype": "Float",
-   "hidden": 0,
    "label": "Break Hours",
    "read_only": 1
   },
@@ -163,13 +162,21 @@
    "fieldtype": "Float",
    "label": "Expected Break Hours",
    "read_only": 1
+  },
+  {
+   "fieldname": "stundennachweis_monteur_1",
+   "fieldtype": "Link",
+   "label": "Stundennachweis Monteur 1",
+   "options": "Stundennachweis Monteur 1",
+   "read_only": 1
   }
  ],
  "links": [],
- "modified": "2024-07-24 16:45:02.502629",
+ "modified": "2024-10-23 13:11:37.446305",
  "modified_by": "Administrator",
  "module": "HR Addon",
  "name": "Workday",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -198,5 +205,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }
