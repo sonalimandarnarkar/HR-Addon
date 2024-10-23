@@ -9,7 +9,6 @@
  "field_order": [
   "employee",
   "attendance",
-  "stundennachweis_monteur_1",
   "acolumn_break_1",
   "log_date",
   "status",
@@ -162,17 +161,10 @@
    "fieldtype": "Float",
    "label": "Expected Break Hours",
    "read_only": 1
-  },
-  {
-   "fieldname": "stundennachweis_monteur_1",
-   "fieldtype": "Link",
-   "label": "Stundennachweis Monteur 1",
-   "options": "Stundennachweis Monteur 1",
-   "read_only": 1
   }
  ],
  "links": [],
- "modified": "2024-10-23 13:11:37.446305",
+ "modified": "2024-10-23 14:59:03.917521",
  "modified_by": "Administrator",
  "module": "HR Addon",
  "name": "Workday",
